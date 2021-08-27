@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="Raskopova" id="1">
+        <createTable tableName="film">
+            <column autoIncrement="true" name="id" type="LONG">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="tasks_pk"/>
+            </column>
+            <column name="name" type="VARCHAR(50)">
+            </column>
+            <column name="description" type="VARCHAR(50)">
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="film"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

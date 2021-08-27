@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="Raskopova" id="2">
+        <insert tableName="film">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Get Lucky / Daft Punk"/>
+            <column name="description" value="Дата выпуска-2013"/>
+        </insert>
+        <insert tableName="film">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="The Box / Roddy Rich"/>
+            <column name="description" value="Дата выпуска-2019"/>
+        </insert>
+        <insert tableName="film">
+            <column name="id" valueNumeric="3"/>
+            <column name="name" value="For the night/ Pop smoke"/>
+            <column name="description" value="Дата выпуска-2020"/>
+        </insert>
+        <insert tableName="film">
+            <column name="id" valueNumeric="4"/>
+            <column name="name" value="It's My Life / Dr. Alban "/>
+            <column name="description" value="Дата выпуска-1990"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
