@@ -1,7 +1,6 @@
 package com.example.quotes.service;
 
 import com.example.quotes.model.Quote;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.List;

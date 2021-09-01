@@ -5,13 +5,15 @@ import com.example.quotes.model.Quote;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class QuoteServiceImpl implements QuoteService {
     private final String API= "https://www.breakingbadapi.com/api/quotes";
-    private final String ID_API = "https://www.breakingbadapi.com/api/quotes/{id}";
+   private final String ID_API = "https://www.breakingbadapi.com/api/quotes/{id}";
 
 
 
@@ -36,12 +38,12 @@ public class QuoteServiceImpl implements QuoteService {
 
     @Override
     public Quote findById(Integer id) {
-            return webClient
-                    .get()
-                    .uri(ID_API, id)
-                    .retrieve()
-                    .bodyToMono(Quote.class)
-                    .block();
+        return Objects.requireNonNull(webClient
+                .get()
+                .uri(ID_API, id)
+                .retrieve()
+                .bodyToFlux(Quote.class).collectList()
+                .block()).get(0);
         }
 
     }

@@ -1,21 +1,42 @@
 package com.example.quotes.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.io.Serializable;
 
+public class Quote implements Serializable  {
 
-public class Quote implements Serializable {
 
-    private String text;
+    private Integer quote_id;
+
+    private String quote;
+
     private String author;
 
-    public Quote(String text, String author) {
-        this.text = text;
+    private String series;
+
+    public Quote(Integer quote_id, String quote, String author, String series) {
+        this.quote_id = quote_id;
+        this.quote = quote;
         this.author = author;
+        this.series = series;
     }
 
     public Quote() {
+    }
+
+    public String getSeries() {
+        return series;
+    }
+
+    public void setSeries(String series) {
+        this.series = series;
+    }
+
+    public Integer getQuote_id() {
+        return quote_id;
+    }
+
+    public void setQuote_id(Integer quote_id) {
+        this.quote_id = quote_id;
     }
 
     public String getAuthor() {
@@ -26,11 +47,11 @@ public class Quote implements Serializable {
         this.author = author;
     }
 
-    public String getText() {
-        return text;
+    public String getQuote() {
+        return quote;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setQuote(String quote) {
+        this.quote = quote;
     }
 }
